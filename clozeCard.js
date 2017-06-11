@@ -1,3 +1,6 @@
+var fs = require('fs');
+var inquirer = require('inquirer');
+
 // This file should define a Node module that exports a constructor
 //  for creating cloze-deletion flashcards,
 //   e.g.: module.exports = ClozeCard;
