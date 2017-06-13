@@ -1,5 +1,6 @@
-var fs = require('fs');
 var inquirer = require('inquirer');
+var fs = require('fs');
+
 
 // This file should define a Node module that exports a constructor
 //  for creating basic flashcards, e.g.: module.exports = BasicCard;
@@ -13,6 +14,10 @@ var BasicCard = function(front, back) {
 	this.back = back;
 
 	console.log('Front: ' + this.front + " Back: " + this.back + '.');
+
+	fs.appendFile("basic.json", "{front: " + this.front + ", back: " + this.back + "},", function(err){
+			if (err) console.log(err)
+		})
 }
 
 var BasicCardInput = function(){
@@ -33,6 +38,7 @@ var BasicCardInput = function(){
 
 var enterInputs = function(inputs){
 	new BasicCard(inputs.frontText, inputs.backText);
+	
 }
 
 BasicCardInput();
