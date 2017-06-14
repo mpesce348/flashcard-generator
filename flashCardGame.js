@@ -10,7 +10,7 @@ var clozeCards = require('./clozeCard.js');
 //in the directory
 var PlayQuiz = function() {
     console.log('Welcome to the Flashcard Game!');
-    console.log('Prepare to Test Your KNowledge');
+    console.log('Prepare to Test Your Knowledge');
     
     inquirer.prompt([{
         type: 'checkbox',

@@ -33,8 +33,8 @@ var ClozeCard =function(fullText, cloze, partial, err) {
 	console.log('');
 	console.log('=============================');
 	
-
-	fs.appendFile("cloze.json", "{full text: " + this.fullText + ", cloze argument: " + this.cloze + "},", function(err){
+	//uses file system package to apend the close.json file with user inputs
+	fs.appendFile("cloze.json", "{" + "full text: " + JSON.stringify(this.fullText) + ", cloze argument: " + JSON.stringify(this.cloze) + "},", function(err){
 		if (err) console.log(err);
 		})
 

@@ -23,7 +23,7 @@ var BasicCard = function(front, back) {
 	console.log('=============================');
 	//uses file system package to append question and anwser values to the basic.json file
 	//also sets up function to display errors should one occur
-	fs.appendFile("basic.json", "{front: " + this.front + ", back: " + this.back + "},", function(err){
+	fs.appendFile("basic.json", "{front: " + JSON.stringify(this.front) + ", back: " + JSON.stringify(this.back) + "},", function(err){
 			if (err) console.log(err);
 		})
 }
