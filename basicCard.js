@@ -14,11 +14,17 @@ var BasicCard = function(front, back) {
 	//  the text on the back of the card.
 	this.back = back;
 	//once question and anwsers values are passed they are console logged
-	console.log('Front: ' + this.front + " Back: " + this.back + '.');
+	console.log('=============================');
+	console.log('');
+	console.log('Front: ' + this.front); 
+	console.log('');
+	console.log('Back: ' + this.back + '.');
+	console.log('');
+	console.log('=============================');
 	//uses file system package to append question and anwser values to the basic.json file
 	//also sets up function to display errors should one occur
 	fs.appendFile("basic.json", "{front: " + this.front + ", back: " + this.back + "},", function(err){
-			if (err) console.log(err)
+			if (err) console.log(err);
 		})
 }
 //sets up function to to utalize inquirer package to promt user for 

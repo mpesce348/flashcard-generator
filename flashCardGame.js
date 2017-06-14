@@ -29,14 +29,44 @@ var handleInput = function(processChoice) {
 			console.log('Invalid Entry - Try Again');
 	}
 };
-
+//sets up function to promt user to choose to build close cards
+//or basic cards
 var cardType = function() {
+		inquirer.prompt([
+		{
+			type: 'checkbox',
+			message: 'What type of card would you like to add?',
+			choices: ['basic', 'cloze'],
+			name: 'basicCloze'
+		}
 
+		]).then(handleCardType);
+};
+//creates function which will run functions exported from other files
+//in the directory
+var handleCardType = function(cardChoice) {
+	//shows the user the type of card they have selected to build
+	console.log('type of card answer: '+ cardChoice.basicCloze[0]);
+
+		//switch case to run the functions from basicCard.js
+		//and clozeCard.js
+	switch (cardChoice.basicCloze[0]){
+		case 'basic':
+			basicCards.basicCardInput();
+			break;
+
+		case 'cloze':
+			clozeCards.clozeCardInput();
+			break;
+
+		default:
+			console.log("I'm sorry, Please try again.")
+	};
 };
 
-var playQuiz = function() {
-
-};
+var playQuiz = function(){
+	fs.readFile()
+}	
 
 
 
