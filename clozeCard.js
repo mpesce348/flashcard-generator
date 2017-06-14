@@ -11,10 +11,14 @@ var ClozeCard =function(fullText, cloze, partial, err) {
 	this.fullText = fullText;
 
 	this.cloze = cloze;
-
+	//creates var called match which is set to match the value of
+	//cloze
 	var match = this.fullText.match(cloze);
+	//creates var called part which replaces the value of var match
+	// to '................'
 	var part = this.fullText.replace(match, "............");
-	
+	//sets value of partial to the the full text with the cloze argument
+	//replaced by '.........'
 	this.partial = part;
  
 	

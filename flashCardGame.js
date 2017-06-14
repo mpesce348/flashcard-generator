@@ -6,11 +6,10 @@ var clozeCardData = require('./cloze.json');
 var basicCards = require('./basicCard.js');
 var clozeCards = require('./clozeCard.js');
 
-
 //creates function which will run functions exported from other files
 //in the directory
 var PlayQuiz = function() {
-    console.log("Welcome to the Flashcard Game!");
+    console.log('Welcome to the Flashcard Game!');
     console.log('Prepare to Test Your KNowledge');
     
     inquirer.prompt([{
@@ -23,7 +22,7 @@ var PlayQuiz = function() {
 
 var playerChoice = function(quizAnws){
 
-	switch (quizAnws.card_choice[0]){
+	switch (this.card_choice[0]){
 		case 'basic':
 			playBasic();	
 			break;
@@ -38,7 +37,8 @@ var playerChoice = function(quizAnws){
 
 var playBasic = function(){
 	var basicQuestion = fs.readFile('./basic.json', 'utf8', function(err, data){
-		if (err) {console.log(err);
+		if (err) {
+			console.log(err);
 		} else {
 			console.log(data);
 		}
@@ -47,7 +47,8 @@ var playBasic = function(){
 
 var playCloze = function() {
 		var clozeQuestion = fs.readFile('./cloze.json', 'utf8', function(err, data){
-		if (err) {console.log(err);
+		if (err) {
+			console.log(err);
 		} else {
 			console.log(data);
 		}
